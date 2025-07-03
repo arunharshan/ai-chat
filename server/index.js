@@ -1,5 +1,6 @@
 // FileName as index.js or change in the root/package.json file
 const express = require('express');
+const serverless = require("serverless-http"); // for vercel deployment
 const cors = require('cors');
 const ai_chat_app = express();
 const PORT = 5001;
@@ -65,8 +66,9 @@ ai_chat_app.post('/login', (req, res) => {
     }
 });
 
-// starts server
-ai_chat_app.listen(PORT, () => {
-    console.log(`AI Chat APP express server runs at the port, http://localhost:${PORT}`);
-
-})
+// starts server- for local server
+// ai_chat_app.listen(PORT, () => {
+//     console.log(`AI Chat APP express server runs at the port, http://localhost:${PORT}`);
+// })
+module.exports = ai_chat_app;
+module.exports.handler = serverless(ai_chat_app);
