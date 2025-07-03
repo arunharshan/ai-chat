@@ -1,7 +1,7 @@
 
 # 💬 AI Chat App using Gemini API
 
-A modern, responsive AI-powered chat application built with **React 19 (Vite + TypeScript)**, featuring a clean architecture, theming, error handling, private routes, and animated conversations — powered by **Google Gemini API**.
+A modern, responsive AI-powered chat application built with **React 19 (Vite + TypeScript,NodeJS and Express)**, featuring a clean architecture, theming, error handling, private routes, and animated conversations — powered by **Google Gemini API**.
 
 🌐 **Live Demo:** [Click here to view the app](https://chat-arun.vercel.app/)
 🔗 *https://chat-arun.vercel.app/* 
@@ -34,6 +34,13 @@ api-chat/
 - **React Router** for:
   - Public and private routes
   - Auth guard protection
+
+### ⚛️ Backend Server-Api Call
+- Built with **NodeJs and Express**
+- A dummy server to check the user authentication
+- **Express** for:
+  - GET, POST, DELETE 
+  - The user can be created and modified using these api calls
 
 ### 🔐 Authentication
 - Dummy login system via **Node.js + Express**
