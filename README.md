@@ -3,8 +3,8 @@
 
 A modern, responsive AI-powered chat application built with **React 19 (Vite + TypeScript)**, featuring a clean architecture, theming, error handling, private routes, and animated conversations — powered by **Google Gemini API**.
 
-🌐 **Live Demo:** [Click here to view the app](https://aichat-arun.vercel.app/)
-🔗 *https://aichat-arun.vercel.app/* 
+🌐 **Live Demo:** [Click here to view the app](https://chat-arun.vercel.app/)
+🔗 *https://chat-arun.vercel.app/* 
 ---
 
 ## 📁 Project Structure
