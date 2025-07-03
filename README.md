@@ -115,7 +115,7 @@ npm run dev
 
 ## 🛠️ Deploying to Vercel
 
-> **Frontend deployment only – backend must be deployed separately (e.g., Render or Railway).**
+> **Frontend deployment**
 
 ### Steps:
 
@@ -130,6 +130,18 @@ npm run dev
 - **Environment Variables**: `KEY_NAME and VALUE` ( as provided in the .env)
 
 5. Click **Deploy**
+
+> **Backend Server deployment**
+
+### Steps:
+
+1. Go to [https://vercel.com/import/git](https://vercel.com/import/git)
+2. Select your GitHub repository 
+3. Set the **root directory** as: /server
+
+4. Set the following build settings: - all default
+5. Click **Deploy**
+   -- NOTE: there are api/index.js , vercel.json file to support the build. There is no default port in the /index.js
 
 
 
