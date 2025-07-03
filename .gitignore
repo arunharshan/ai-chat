@@ -1,0 +1,26 @@
+# Ignore root node_modules if any
+/node_modules
+
+# Ignore client node_modules and env
+/client/node_modules
+/client/.env
+/client/dist
+/client/.vite
+
+# Ignore server node_modules and env
+/server/node_modules
+/server/.env
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode
+.idea

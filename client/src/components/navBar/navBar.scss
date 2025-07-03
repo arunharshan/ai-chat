@@ -1,0 +1,90 @@
+@use "../../styles/main" as *;
+@import "../../styles/breakpoints";
+
+.navbar {
+  position: absolute;
+  height: 100dvh;
+  overflow-y: auto;
+  background-color: var(--ai-card-bg);
+  width: 18rem;
+  border-radius: 20px;
+  padding: var(--ai-header-padding-sm);
+  @extend .ai-flex-col;
+
+  &__hamburger-btn {
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    border: none;
+  }
+
+  &__body {
+    @extend .ai-flex-col;
+    gap: 2rem;
+    height: 100%;
+    margin-top: 2rem;
+  }
+
+  &__ul {
+    list-style: none;
+  }
+
+  &__li {
+    margin-bottom: 6px;
+  }
+
+  &__recent-chat {
+    button.ai-badge {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    ul {
+      overflow-y: auto;
+      max-height: 35dvh;
+    }
+  }
+
+  &__recent-chat-title {
+    &.ai-badge {
+      background-color: transparent;
+      margin: 6px 0;
+      font-weight: var(--ai-font-w-500);
+
+      &:hover {
+        background-color: inherit;
+      }
+    }
+  }
+
+  &--collapse {
+    width: auto;
+    background-color: transparent;
+
+    .navbar__recent-chat,
+    .navbar__body {
+      display: none;
+    }
+  }
+}
+
+@include media-query(md-lg) {
+  .navbar {
+    position: relative;
+    overflow-y: hidden;
+    padding: var(--ai-header-padding);
+
+    &--collapse {
+      min-width: 3rem;
+      background-color: var(--ai-card-bg);
+
+      .navbar__body {
+        display: flex;
+      }
+
+      .ai-badge {
+        width: fit-content;
+      }
+    }
+  }
+}

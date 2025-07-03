@@ -1,0 +1,205 @@
+@use "../styles/breakpoints" as *;
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap");
+@import "./variables.scss";
+
+// Reset
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--ai-gray-light-alt);
+    border-radius: 12px;
+  }
+}
+
+body {
+  font-family: "Roboto Flex", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: var(--ai-font-w-400);
+  font-style: normal;
+  background-color: var(--ai-body-bg);
+  color: var(--ai-body-color);
+  font-size: var(--ai-font-16);
+  overflow: hidden;
+}
+
+#root {
+  height: 100dvh;
+  width: 100%;
+  display: flex;
+  animation: fadeAnimation 1.3s;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button,
+input {
+  font-size: var(--ai-font-16);
+  color: var(--ai-body-color);
+  font-family: inherit;
+  font-weight: var(--ai-font-w-300);
+}
+
+ul,
+ol,
+li {
+  list-style-position: inside;
+}
+
+// Animations
+@keyframes fadeAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+// Mixin
+@mixin hover-style {
+  &:hover {
+    background-color: var(--ai-item-hover);
+    cursor: pointer;
+  }
+}
+
+// Utility classes
+.ai-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 1rem;
+  font-weight: var(--ai-font-w-300);
+}
+
+.ai-icon {
+  font-size: var(--ai-font-16);
+  padding: 0.5rem;
+  width: max-content;
+
+  &--circle {
+    border-radius: 50px;
+    @include hover-style;
+  }
+
+  &--default {
+    padding: 0;
+    background-color: transparent;
+  }
+}
+
+.ai-badge {
+  background-color: transparent;
+  padding: 0.5rem;
+  border-radius: 30px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  @include hover-style;
+
+  &--with-icon {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .ai-icon,
+    i {
+      padding: 0;
+    }
+  }
+}
+
+.ai-toast {
+  padding: 10px 15px;
+  background-color: var(--ai-gray-light);
+  color: var(--ai-dark-color);
+  border-radius: 25px;
+  margin: 5px 0;
+
+  &--message {
+    background-color: var(--ai-blue-light);
+  }
+
+  &--success {
+    background-color: var(--ai-green-light);
+    color: var(--ai-green);
+  }
+
+  &--alert {
+    background-color: var(--ai-alert-light);
+    color: var(--ai-alert);
+  }
+}
+
+// Utility layout helpers
+.ai-mt-auto {
+  margin-top: auto;
+}
+
+.ai-w-100 {
+  width: 100%;
+}
+
+.ai-w-auto {
+  width: auto;
+}
+
+.ai-w-fit {
+  width: fit-content;
+}
+
+.ai-flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+// Responsive
+@include media-query(md-lg) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  input {
+    font-size: var(--ai-font-18);
+  }
+
+  .ai-icon {
+    font-size: var(--ai-font-20);
+  }
+
+  .ai-badge {
+    padding: 0.6rem;
+
+    &--with-icon {
+      .ai-icon,
+      i {
+        padding: 0;
+      }
+    }
+  }
+}

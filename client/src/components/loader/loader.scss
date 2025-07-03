@@ -1,0 +1,84 @@
+.loader {
+  display: flex;
+  flex: 1;
+  gap: 10px;
+
+  &__dot {
+    width: 10px;
+    height: 10px;
+    background: var(--ai-gradient-stop-4);
+    border-radius: 50%;
+    animation: slide 1s infinite;
+
+    &:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    &:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+  }
+}
+
+@keyframes slide {
+  0%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-10px);
+  }
+}
+
+// Another loader
+
+.ai-loader {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  padding: 20px;
+}
+
+.ai-loader__line {
+  height: 14px;
+  width: 100%;
+  border-radius: 6px;
+  background: linear-gradient(
+    90deg,
+    var(--ai-gradient-stop-1),
+    var(--ai-gradient-stop-2),
+    var(--ai-gradient-stop-3),
+    var(--ai-gradient-stop-4)
+  );
+  background-size: 300% 300%;
+  animation: ai-pulse 1.8s ease-in-out infinite;
+  opacity: 0.4;
+
+  &:nth-child(1) {
+    animation-delay: 0s;
+  }
+
+  &:nth-child(2) {
+    animation-delay: 0.3s;
+  }
+
+  &:nth-child(3) {
+    animation-delay: 0.6s;
+  }
+}
+
+@keyframes ai-pulse {
+  0%,
+  100% {
+    opacity: 0.3;
+    background-position: 0% 50%;
+  }
+
+  50% {
+    opacity: 1;
+    background-position: 100% 50%;
+  }
+}

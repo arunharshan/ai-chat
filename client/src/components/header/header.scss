@@ -1,0 +1,49 @@
+@use '../../styles/breakpoints' as *;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--ai-header-padding-sm);
+  font-size: var(--ai-font-16);
+  font-weight: 700;
+
+  &__title {
+    margin: 0 auto;
+
+    a {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__title-logo,
+  &__avatar-img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50px;
+  }
+
+  &__avatar {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+}
+
+@include media-query(md-lg) {
+  .header {
+    font-size: var(--ai-font-20);
+    padding: var(--ai-header-padding);
+
+    &__title {
+      margin-left: 14px;
+    }
+
+    &__title-logo,
+    &__avatar-img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}

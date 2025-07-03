@@ -1,0 +1,40 @@
+@import './main.scss';
+
+.shared-page {
+  width: 100%;
+  overflow-y: auto;
+
+  &__body {
+    padding: 15px;
+    @extend .ai-flex-col;
+    align-items: center;
+  }
+
+  &__container {
+    padding: 1rem;
+    border-radius: 10px;
+     width: clamp(300px, 100%, 60%);
+    @extend .ai-flex-col;
+    align-items: center;
+
+    h1 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 3rem;
+      font-weight: 300;
+    }
+    h2 {
+      margin-bottom: 1rem;
+    }
+    ul {
+      list-style-type: none;
+      margin-bottom: 1rem;
+      li {
+        margin: .75rem 0;
+        span,a {
+          margin-right: .5rem;
+        }
+      }
+    }
+  }
+}

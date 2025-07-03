@@ -1,0 +1,5 @@
+@use "../../styles/main" as *;
+.home {
+    width: 100%;
+    @extend .ai-flex-col;
+}
